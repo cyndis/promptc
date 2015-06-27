@@ -2,13 +2,14 @@
 name = "promptc"
 version = "0.1.0"
 dependencies = [
- "ansi_term 0.6.2",
+ "ansi_term 0.6.2 (git+git://github.com/cyndis/rust-ansi-term.git)",
  "users 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "ansi_term"
 version = "0.6.2"
+source = "git+git://github.com/cyndis/rust-ansi-term.git#4339b4f79763c5a04b35eaeb7b74818f4474a6e1"
 
 [[package]]
 name = "libc"
