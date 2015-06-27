@@ -5,8 +5,8 @@ const ABBREVIATE_PARENT_DIRECTORIES: bool = true;
 extern crate ansi_term;
 extern crate users;
 
-use ansi_term::Colour::{Black, Red, Green, Yellow, Blue, Purple, Cyan, Fixed};
-use ansi_term::{Style, ANSIString};
+use ansi_term::Colour::{Red, Green, Fixed};
+use ansi_term::Style;
 
 use std::io::prelude::*;
 use std::fs::File;
@@ -162,13 +162,6 @@ fn get_output(cmd: &mut process::Command) -> Option<String> {
     match std::str::from_utf8(&stdout) {
         Ok(s) => Some(s.trim().to_owned()),
         Err(_) => None
-    }
-}
-
-fn succeeded(cmd: &mut process::Command) -> bool {
-    match cmd.output() {
-        Ok(process::Output { ref status, .. }) if status.success() => true,
-        _ => false
     }
 }
 
