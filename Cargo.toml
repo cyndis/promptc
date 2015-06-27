@@ -1,0 +1,10 @@
+[package]
+name = "promptc"
+version = "0.1.0"
+authors = ["Mikko Perttunen <cyndis@kapsi.fi>"]
+
+[dependencies.ansi_term]
+path = "rust-ansi-term"
+
+[dependencies]
+users = "*"
