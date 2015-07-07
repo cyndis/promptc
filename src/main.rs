@@ -1,3 +1,5 @@
+// kate: syntax Rust; replace-tabs true; indent-width 4
+
 #![feature(path_relative_from, path_components_peek, path_ext)]
 
 const ABBREVIATE_PARENT_DIRECTORIES: bool = true;
