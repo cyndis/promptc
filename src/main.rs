@@ -47,12 +47,22 @@ fn format_path(styled: bool) -> Result<String> {
             root = "~";
             tail = rel.to_owned();
         } else {
-            root = "";
-            tail = pwd.relative_from("/").unwrap().to_owned();
+            match pwd.relative_from("/") {
+                Some(p) => { root = ""; tail = p.to_owned(); }
+                None    => {
+                    root = "?";
+                    tail = pwd.to_owned();
+                }
+            };
         }
     } else {
-        root = "";
-        tail = pwd.relative_from("/").unwrap().to_owned();
+        match pwd.relative_from("/") {
+            Some(p) => { root = ""; tail = p.to_owned(); }
+            None    => {
+                root = "?";
+                tail = pwd.to_owned();
+            }
+        };
     }
 
     let mut components = tail.components();
